@@ -44,5 +44,5 @@ Template.myTemplate.helpers({
 
 in client template html
 ```
-{{> tooltippedIcon icon="alarm_on" text="Alarm") position="right"}}
+{{> tooltippedIcon icon="alarm_on" text="Alarm" position="right"}}
 ```

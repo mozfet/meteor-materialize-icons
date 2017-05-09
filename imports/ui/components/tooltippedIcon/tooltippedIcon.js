@@ -2,7 +2,7 @@
 
 //imports
 import { Template } from 'meteor/templating';
-import '../materialIcon/materialIcon.js';
+import '../materialIcon/materialIcon';
 import './tooltippedIcon.html';
 
 //on created
