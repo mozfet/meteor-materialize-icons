@@ -13,3 +13,36 @@ Install materialize:materialize (untested) or poetic:materialize-scss. Important
 ```
 $ meteor add mozfet:autoform-materialize-icons
 ```
+
+### Useage ###
+
+in client myTemplate.html
+```
+{{> materialIcon attr=iconAttr}}
+```
+
+in client myTemplate.js
+```
+Template.myTemplate.onCreated() => {
+  const instance = Template.instance();
+  instance.iconName = new ReactiveVar('alarm_on');
+  instance.iconClass = new ReactiveVar('large');
+};
+
+Template.myTemplate.helpers({
+  iconAttr() {
+    const instance = Template.instance();
+    return {
+      name: instance.iconName.get(),
+      class: instance.iconClass.get()
+    }
+  }
+});
+```
+
+#### tooltipped icon ####
+
+in client template html
+```
+{{> tooltippedIcon icon="alarm_on" text="Alarm") position="right"}}
+```
