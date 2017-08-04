@@ -18,7 +18,7 @@ Template.tooltippedIcon.onCreated(() => {
   };
 
   //init class
-  console.log('tooltipped data', instance.data);
+  // console.log('tooltipped data', instance.data);
 
   //tooltip
   if(instance.data.text) {
