@@ -14,7 +14,7 @@ Install materialize:materialize (untested) or poetic:materialize-scss. Important
 $ meteor add mozfet:autoform-materialize-icons
 ```
 
-### Useage ###
+### Reactive Icons Useage ###
 
 in client myTemplate.html
 ```
@@ -44,5 +44,5 @@ Template.myTemplate.helpers({
 
 in client template html
 ```
-{{> tooltippedIcon icon="alarm_on" text="Alarm" position="right"}}
+{{> tooltippedIcon icon="alarm_on" iconClass="medium" text="Alarm" position="right"}}
 ```
