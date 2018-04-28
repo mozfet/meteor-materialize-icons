@@ -1,0 +1,11 @@
+<!-- useage:
+{{> tooltippedIconText icon="iconName" class="grey-text text-darken-4"
+    tooltipText="Tooltip" text="Text" tooltipPosition="right"}}
+-->
+
+<template name="tooltippedIconText">
+  <span>
+    {{> tooltippedIcon icon=icon class=class text=tooltipText position=tooltipPosition}}
+    <span class={{class}} style='position: relative; top: -5px;'>{{text}}</span>
+  </span>
+</template>

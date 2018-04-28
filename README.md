@@ -10,11 +10,21 @@ While Materializecss provides a great set of icons and build in tooltip support,
 
 Install materialize:materialize. Important: this package has no direct dependency on materialize thus no warning will be generated if not already installed.
 
+command line:
 ```
 $ meteor add mozfet:autoform-materialize-icons
 ```
 
-### Reactive Icons Useage ###
+client js:
+```
+import 'meteor/mozfet:materialize-icons';
+```
+
+### Supported Icons ###
+
+Icon names can be any [icon supported by MaterializeCSS](http://archives.materializecss.com/0.100.2/icons.html).
+
+### Reactive Icons ###
 
 in client myTemplate.html
 ```
@@ -40,10 +50,18 @@ Template.myTemplate.helpers({
 });
 ```
 
-#### tooltipped icon ####
+### Reactive Tooltipped Icon ###
 
-in client template html
+in client template html:
 ```
 {{> tooltippedIcon icon="alarm_on" iconClass="medium" text="Alarm" position="right"}}
 ```
 position can be : bottom, top, left, or right
+
+### Reactive Tooltipped Icon with Text ###
+
+in client template html:
+```
+{{> tooltippedIconText icon="iconName" class="grey-text text-darken-4"
+    tooltipText="Tooltip" text="Text" tooltipPosition="right"}}
+```
