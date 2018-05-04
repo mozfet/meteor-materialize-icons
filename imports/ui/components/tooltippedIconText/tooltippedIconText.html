@@ -4,8 +4,19 @@
 -->
 
 <template name="tooltippedIconText">
-  <span>
-    {{> tooltippedIcon icon=icon class=class text=tooltipText position=tooltipPosition}}
+
+  <span {{tooltipAttr}}>
+    {{> materialIcon attr=iconAttr}}
     <span class={{class}} style='position: relative; top: -5px;'>{{text}}</span>
   </span>
+
+  <!-- <span>
+    {{> tooltippedIcon icon=icon class=class text=tooltipText position=tooltipPosition}}
+    <span class={{class}} style='position: relative; top: -5px;'>{{text}}</span>
+  </span> -->
+
+  <!-- <div class="valign-wrapper {{class}}">
+    <div>{{> tooltippedIcon icon=icon class=class text=tooltipText position=tooltipPosition}}</div>
+    <div class="truncate">&nbsp;{{text}}</div>
+  </div> -->
 </template>

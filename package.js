@@ -1,7 +1,7 @@
 Package.describe({
   name: 'mozfet:materialize-icons',
   summary: 'Reactive Materialize Icons with tooltips.',
-  version: '0.1.0',
+  version: '0.1.2',
   git: 'https://github.com/mozfet/meteor-autoform-materialize-icons.git'
 });
 
