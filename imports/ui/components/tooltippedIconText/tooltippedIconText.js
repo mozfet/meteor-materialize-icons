@@ -28,7 +28,7 @@ Template.tooltippedIconText.onCreated(() => {
   // setup icon
   instance.state.iconAttr.name = instance.data.icon;
   if (instance.data.iconClass) {
-    instance.iconAttr['class'] = instance.data.iconClass;
+    instance.state.iconAttr['class'] = instance.data.iconClass;
   }
 });
 
