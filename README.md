@@ -1,4 +1,6 @@
 # Meteor Materialize Icons
+> **IMPORTANT** This version does not work with versions of MaterializeCSS < 1.0.
+> **IMPORTANT** For earlier versions of Materialize use V0.1.1 of this package.
 
 This package provides reactive materialize icons with built in tooltips. In other words, Materializecss icons on steriods.
 
@@ -52,11 +54,16 @@ Template.myTemplate.helpers({
 
 ### Reactive Tooltipped Icon ###
 
-in client template html:
-```
+Static example
+```html
 {{> tooltippedIcon icon="alarm_on" iconClass="medium" text="Alarm" position="right"}}
 ```
-position can be : bottom, top, left, or right
+Reactive example where ```icon``` and ```text``` are helpers returning ```ReactiveVar``` objects:
+```html
+{{> tooltippedIcon icon=icon iconClass="medium" text=text position="right"}}
+```
+
+Position can be : bottom, top, left, or right
 
 ### Reactive Tooltipped Icon with Text ###
 

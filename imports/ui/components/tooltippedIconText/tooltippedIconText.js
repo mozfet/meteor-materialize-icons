@@ -36,7 +36,9 @@ Template.tooltippedIconText.onCreated(() => {
 Template.tooltippedIconText.onRendered(() => {
   const instance = Template.instance();
   if(instance.data.text) {
-    instance.$('.tooltipped').tooltip({delay: 1000});
+    const elements = instance.$('.tooltipped')
+    const tooltips = M.Tooltip.init(element, {html: instance.data.text})
+    instance.tooltip = _.first(tooltips)
   }
 });
 
@@ -53,19 +55,19 @@ Template.tooltippedIconText.helpers({
 });
 
 // events
-Template.tooltippedIconText.events({
-  'click'(event, template) {
-    const instance = Template.instance();
-    instance.$('.tooltipped').trigger('mouseleave.tooltip');
-  },
-  'hover'(event, template) {
-    const instance = Template.instance();
-    instance.$('.tooltipped').trigger('mouseenter.tooltip');
-  }
-});
+// Template.tooltippedIconText.events({
+//   'click'(event, template) {
+//     const instance = Template.instance();
+//     instance.$('.tooltipped').trigger('mouseleave.tooltip');
+//   },
+//   'hover'(event, template) {
+//     const instance = Template.instance();
+//     instance.$('.tooltipped').trigger('mouseenter.tooltip');
+//   }
+// });
 
 // on destroyed
 Template.tooltippedIconText.onDestroyed(() => {
-  const instance = Template.instance();
-  instance.$('.tooltipped').tooltip('remove');
+  const instance = Template.instance()
+  instance.tooltip.destroy()
 });
