@@ -55,7 +55,10 @@ Template.tooltippedIcon.onRendered(() => {
   const instance = Template.instance();
   if(instance.data.text) {
     const elements = instance.$('.tooltipped')
-    const tooltips = M.Tooltip.init(elements, {html: instance.data.text})
+    const tooltips = M.Tooltip.init(elements, {
+      html: instance.data.text,
+      enterDelay: 1500
+    })
     instance.tooltip = _.first(tooltips)
   }
   return undefined;
