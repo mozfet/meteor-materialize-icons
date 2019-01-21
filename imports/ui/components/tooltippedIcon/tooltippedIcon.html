@@ -1,7 +1,15 @@
 <!-- useage:
-{{> tooltippedIcon icon="iconName" class="grey-text text-darken-4" text="Text" position="right"}}
+{{> tooltippedIcon
+    icon="home"
+    class="grey-text text-darken-4"
+    text="Home"
+    position="right"
+    link="/home"
+}}
 -->
 
 <template name="tooltippedIcon">
-  <span {{tooltipAttr}}>{{> materialIcon attr=iconAttr}}</span>
+  <span onclick="void(0)" {{tooltipAttr}}>
+    {{> materialIcon attr=iconAttr}}
+  </span>
 </template>

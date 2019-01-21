@@ -6,6 +6,8 @@ This package provides reactive materialize icons with built in tooltips. In othe
 
 While Materializecss provides a great set of icons and build in tooltip support, using these two together is clumsy with lots of boilerplate code. In addition to this, Materializecss icons do not render reactively out of the box which, when using Meteor and creating modular and reactive components that use different icons, becomes a problem. To make things worse, there are so many icons out there and often reused, it is often confusing to users what icons mean, so tooltips are often required. And because of all of this, this package has been born.
 
+On desktop, tooltips show when you hover over the icon. On mobile apps and browsers a long press will show the tooltip, and a fast click will open the link.
+
 > **Thank You** This suite of packages is maintained by [ExpertBox.com](http://www.ExpertBox.com) as a thank you to the Open Source community.
 
 ### Install ###
@@ -56,14 +58,31 @@ Template.myTemplate.helpers({
 
 Static example
 ```html
-{{> tooltippedIcon icon="alarm_on" iconClass="medium" text="Alarm" position="right"}}
-```
-Reactive example where ```icon``` and ```text``` are helpers returning ```ReactiveVar``` objects:
-```html
-{{> tooltippedIcon icon=icon iconClass="medium" text=text position="right"}}
+{{> tooltippedIcon
+    icon="home"
+    iconClass="medium"
+    text="Go to Home Page"
+    position="right"
+    link="/home"
+}}
 ```
 
-Position can be : bottom, top, left, or right
+Note that iconClass, position and link is optional. ```position``` can be : ```bottom```, ```top```, ```left```, or ```right```.
+
+It is typical for an icons with tooltips to be links. You can of course wrap the tooltipped icon in a ```<a href="/home">...</a>``` to achieve a link, however this does not work well on mobile devices becuase long pressing on a link will usually open a browser popup over your tooltip.
+
+In fact tooltips on mobile devices are kinda tricky because we do not know where your finger is hovering until you actually touch the screen and mobile browsers often do not handle ```hover``` events. In addition the are known issues with Materialize tooltips on mobile that this package tries to work around... so its probably best just use the ```link``` argument whenever you can.
+
+Reactive example where ```icon```, ```text``` and ```link``` are helpers returning ```ReactiveVar``` objects:
+```html
+{{> tooltippedIcon
+    icon=icon
+    iconClass="medium"
+    text=text
+    position="right"
+    link=link    
+}}
+```
 
 ### Reactive Tooltipped Icon with Text ###
 
