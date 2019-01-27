@@ -1,1 +1,1 @@
-import './imports/ui/components/tooltippedIconText.js'
+import './imports/ui/components/tooltippedIconText'
