@@ -1,3 +1,1 @@
-/*jshint esversion: 6 */
-
-import './imports/ui/components/tooltippedIconText';
+import './imports/ui/components/tooltippedIconText.js'
