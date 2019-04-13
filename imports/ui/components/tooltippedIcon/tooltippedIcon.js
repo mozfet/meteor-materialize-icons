@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating'
 import '../materialIcon/materialIcon'
 import './tooltippedIcon.html'
 import { FlowRouter } from 'meteor/kadira:flow-router'
+import { ReactiveVar } from 'meteor/reactive-var'
 
 // on created
 Template.tooltippedIcon.onCreated(() => {
