@@ -29,6 +29,7 @@ Template.tooltippedIconText.onCreated(() => {
   instance.state.iconAttr.name = instance.data.icon;
   if (instance.data.iconClass) {
     instance.state.iconAttr['class'] = instance.data.iconClass;
+    instance.state.iconAttr['style'] = instance.data.iconStyle;
   }
 });
 
@@ -39,8 +40,7 @@ Template.tooltippedIconText.onRendered(() => {
     const elements = instance.$('.tooltipped')
     const tooltips = M.Tooltip.init(elements, {
       html: instance.data.text,
-      enterDelay: 1500
-
+      enterDelay: 500
     })
     instance.tooltip = _.first(tooltips)
   }

@@ -57,6 +57,9 @@ Template.tooltippedIcon.onCreated(() => {
   // add icon class to icon attr
   instance.iconAttr['class'] = instance.data.iconClass
 
+  // add icon style to icon attr
+  instance.iconAttr['style'] = instance.data.iconStyle;
+
   // return
   return undefined
 })
@@ -64,14 +67,12 @@ Template.tooltippedIcon.onCreated(() => {
 // on rendered
 Template.tooltippedIcon.onRendered(() => {
   const instance = Template.instance()
-  console.log('tooltip', instance.text.get())
   const element = instance.$('.tooltipped')
   const tooltips = M.Tooltip.init(element, {
     html: instance.data.text,
-    enterDelay: 100
+    enterDelay: 500
   })
   instance.tooltip = _.first(tooltips)
-  console.log('tooltip', instance.tooltip)
   return undefined
 })
 
