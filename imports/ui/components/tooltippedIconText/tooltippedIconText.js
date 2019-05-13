@@ -30,6 +30,7 @@ Template.tooltippedIconText.onCreated(() => {
   if (instance.data.iconClass) {
     instance.state.iconAttr['class'] = instance.data.iconClass;
     instance.state.iconAttr['style'] = instance.data.iconStyle;
+    instance.state.iconAttr['id'] = instance.data.iconId;
   }
 });
 
@@ -73,5 +74,7 @@ Template.tooltippedIconText.helpers({
 // on destroyed
 Template.tooltippedIconText.onDestroyed(() => {
   const instance = Template.instance()
-  instance.tooltip.destroy()
+  if (instance.tooltip) {
+    instance.tooltip.destroy()
+  }
 });
