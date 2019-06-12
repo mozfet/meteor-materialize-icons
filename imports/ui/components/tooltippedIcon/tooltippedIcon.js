@@ -2,7 +2,7 @@
 import { Template } from 'meteor/templating'
 import '../materialIcon/materialIcon'
 import './tooltippedIcon.html'
-import { FlowRouter } from 'meteor/kadira:flow-router'
+import { Router } from 'meteor/msavin:parrot'
 import { ReactiveVar } from 'meteor/reactive-var'
 
 // on created
@@ -103,7 +103,7 @@ Template.tooltippedIcon.events({
   'click'(event, instance) {
     instance.tooltip.close()
     if (instance.link) {
-      FlowRouter.go(instance.link.get())
+      Router.go(instance.link.get())
     }
   },
   'hover'(event, instance) {
