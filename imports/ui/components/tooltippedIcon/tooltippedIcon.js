@@ -116,5 +116,7 @@ Template.tooltippedIcon.events({
 
 Template.tooltippedIcon.onDestroyed(() => {
   const instance = Template.instance()
-  instance.tooltip.destroy()
+  if (instance.tooltip) {
+    instance.tooltip.destroy()
+  }
 })
